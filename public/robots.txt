@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /cart.php
+Disallow: /checkout.php
+Disallow: /account/
+Disallow: /login.php
+Disallow: /register.php
+Disallow: /forgot-password.php
+Disallow: /reset-password.php
+Disallow: /chat.php
+Disallow: /search.php
+
+# After going live, add your real domain on the next line (remove the #):
+# Sitemap: https://YOUR-DOMAIN.com/sitemap.php

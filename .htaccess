@@ -1,0 +1,5 @@
+# OPTIONAL root protection: if the whole project folder is reachable from the web
+# (e.g. XAMPP htdocs/fitness-store/), this stops browsers from opening app/, database/ and storage/.
+RewriteEngine On
+RewriteRule (^|/)\.env([./].*)?$ - [F,L]
+RewriteRule ^(app|database|storage)(/|$) - [F,L]

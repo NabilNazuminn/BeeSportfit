@@ -1,0 +1,31 @@
+# Block folder listings
+Options -Indexes
+
+# Friendlier error for missing pages
+# ErrorDocument 404 /index.php  # enable if the site is at the domain root
+
+# Basic security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Uncomment to force HTTPS on the live server:
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Faster repeat visits: browsers keep CSS/JS/images (asset URLs carry ?v=<file time>, so edits still show up at once)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png  "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType text/css   "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json application/xml image/svg+xml
+</IfModule>

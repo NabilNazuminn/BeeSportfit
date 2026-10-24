@@ -1,0 +1,9 @@
+# Never commit real credentials or uploaded files
+# app/config.php  <- keep it committed with placeholder values; never push real passwords
+.env
+.env.*
+!.env.example
+public/uploads/products/*
+!public/uploads/products/.gitkeep
+
+storage/
